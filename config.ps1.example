@@ -1,0 +1,30 @@
+# config.ps1.example — regix-dll-maper configuration template
+#
+# Copy this file to config.ps1 and edit $dllUrl before running main.ps1.
+# Dot-source it: . ./config.ps1
+# Then run: .\main.ps1   (must be Administrator)
+
+# ============================================================
+#  DLL SOURCE URL — REQUIRED
+# ============================================================
+# Replace {username}, {repo name}, {branch name}, and {DLL Name}
+# with your actual values. The DLL is downloaded via WebClient
+# and manually mapped into the current PowerShell process.
+#
+# Example:
+#   $dllUrl = "https://raw.githubusercontent.com/myorg/myrepo/refs/heads/main/payload.dll"
+#
+$dllUrl = "https://raw.githubusercontent.com/{username}/{repo name}/refs/heads/{branch name}/{DLL Name e.g. example.dll}"
+
+# ============================================================
+#  OPTIONAL SETTINGS (reserved for future use)
+# ============================================================
+# Add any additional configuration variables here if needed.
+# main.ps1 currently only reads $dllUrl from the calling scope.
+
+# ============================================================
+#  USAGE
+# ============================================================
+#   Set-ExecutionPolicy Bypass -Scope Process -Force
+#   . ./config.ps1
+#   .\main.ps1
